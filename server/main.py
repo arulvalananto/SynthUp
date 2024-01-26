@@ -9,7 +9,6 @@ from functions.download_transcript import VideoTranscription
 from models.transcript import TranscriptRequest
 
 
-
 app = FastAPI()
 video_transcription = VideoTranscription()
 
@@ -35,10 +34,11 @@ def download_transcript_handler(request: TranscriptRequest):
         if transcript is None:
             raise HTTPException(
                 status_code=400, detail="Could not retrieve transcript")
-        
+
         summarized_transcript = summarize(transcript)
 
-        return {"message": "Transcript downloaded successfully", "transcript": transcript, "summary": summarized_transcript}
+        return {"message": "Transcript downloaded successfully",
+                "transcript": transcript, "summary": summarized_transcript}
 
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e)) from e
