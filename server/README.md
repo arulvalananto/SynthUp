@@ -24,6 +24,8 @@ source venv/bin/active
   pip search package_name
   ```
 
+- The `pipreqs --force` command is used to generate a `requirements.txt` file for your Python project. This command will scan your project, identify the dependencies, and create a requirements.txt file with the appropriate versions of each dependency.
+
 ## To start application
 
     ```
