@@ -28,4 +28,3 @@ def download_audio(url):
     audio = yt.streams.get_audio_only()
     audio.download(filename=audio_filename)
     return audio_filename
-
