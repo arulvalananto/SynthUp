@@ -1,21 +1,49 @@
-import youtube_dlc
+"""
+This module contains the VideoTranscription class, which is used to retrieve 
+the transcription of a YouTube video.
+"""
+
 from urllib.parse import urlparse, parse_qs
+
+import youtube_dlc
 from youtube_transcript_api import YouTubeTranscriptApi
 
 from functions.common import fetch_captions, extract_text_segments
 
 
 class VideoTranscription:
+    """
+    Class for retrieving the transcription of a YouTube video.
+    """
+
     def __init__(self) -> None:
         pass
 
     def __get_video_id(self, youtube_url):
+        """
+        Extracts the video ID from a YouTube URL.
+
+        Args:
+            youtube_url (str): The URL of the YouTube video.
+
+        Returns:
+            str: The video ID.
+        """
         url_data = urlparse(youtube_url)
         query = parse_qs(url_data.query)
         video_id = query["v"][0]
         return video_id
 
     def __get_auto_captions(self, video_url):
+        """
+        Retrieves the auto-generated captions for a YouTube video.
+
+        Args:
+            video_url (str): The URL of the YouTube video.
+
+        Returns:
+            dict: The auto-generated captions for different languages.
+        """
         try:
             # Create a YoutubeDL object with options
             ydl_opts = {
@@ -47,6 +75,15 @@ class VideoTranscription:
             return None
 
     def __get_caption(self, caption_urls):
+        """
+        Retrieves the captions from a list of caption URLs.
+
+        Args:
+            caption_urls (list): A list of caption URLs.
+
+        Returns:
+            str: The combined captions as a single string.
+        """
         # Check if there are any caption URLs
         if caption_urls:
             # Get the first caption URL
