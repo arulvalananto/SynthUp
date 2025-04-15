@@ -1,2 +1,8 @@
 fastapi[standard]==0.115.8
 python-dotenv==1.0.1
+youtube-transcript-api==1.0.3
+bert-extractive-summarizer==0.10.1
+transformers==4.51.3
+torch==2.6.0
+torchvision==0.21.0
+torchaudio==2.6.0
