@@ -1,4 +1,4 @@
-import axios from 'axios';
+import API from '@api/helpers';
 import constants from '@/common/constants';
 
 class UploadService {
@@ -8,11 +8,9 @@ class UploadService {
      * @returns
      */
     async summarize(videoUrl: string) {
-        const baseURL =
-            import.meta.env.VITE_APP_AI_API_URL + constants.ENDPOINTS.PREFIX;
-        const endpoint = `${baseURL}${constants.ENDPOINTS.UPLOAD.SUMMARIZE}`;
+        const endpoint = constants.ENDPOINTS.UPLOAD.SUMMARIZE;
 
-        return await axios.post(endpoint, {
+        return await API.postRequest(endpoint, {
             url: videoUrl,
         });
     }

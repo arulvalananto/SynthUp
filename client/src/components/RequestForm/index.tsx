@@ -14,9 +14,8 @@ const RequestForm: React.FC<Props> = ({ onSubmit }) => {
         <Formik
             initialValues={{ videoUrl: '' }}
             validationSchema={UploadSchema}
-            onSubmit={(values, actions) => {
+            onSubmit={(values) => {
                 onSubmit(values.videoUrl);
-                actions.resetForm();
             }}
         >
             {({ errors, touched }) => (
