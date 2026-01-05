@@ -2,7 +2,7 @@
 
 ## Description
 
-SynthUp is a tool that turns long videos into short and easy-to-listen summaries. It allows users to get to the point quickly and enjoy their content effortlessly, wherever they are.
+SynthUp is a tool that turns long videos into short and easy-to-listen summaries. It allows users to get to the point quickly and enjoy their content effortlessly, wherever they are
 
 ## Features
 
