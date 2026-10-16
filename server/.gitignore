@@ -1,1 +1,6 @@
-routers/nltk_data
+__pycache__/
+*.py[cod]
+.env
+nltk_data/
+
+.venv/
